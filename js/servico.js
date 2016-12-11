@@ -35,6 +35,10 @@ function loadDashboard(){
     
     var idUser = localStorage.getItem("ClienteId");
 
+    if(idUser==""){
+    	location.href="index.html";
+    }
+
 	var request = $.ajax({
         method: "GET",
         url: "http://realizagrupo.com.br/app/get-nomeusuario.php?id="+idUser

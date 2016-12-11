@@ -85,7 +85,8 @@
         <access />            
         <access origin="*" /> 
 
-        <access origin="http://realizagrupo.com.br" />                    
+        <access origin="http://realizagrupo.com.br" />     
+        <access origin="http://realizagrupo.com.br/app/" />               
         <access origin="http://realizagrupo.com.br" subdomains="true" /> 
         <access origin="http://realizagrupo.com.br" browserOnly="true" />     
 
