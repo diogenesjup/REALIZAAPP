@@ -25,6 +25,7 @@ function verificarLogin(){
     });
     request.fail(function () {
         console.log("Ocorreu um erro ao tentar realizar o login na plataforma");
+        alert("Ocorreu um erro ao tentar se comunicar com o servidor RealizaApp")
     });
 
 }
