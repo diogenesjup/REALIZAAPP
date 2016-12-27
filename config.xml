@@ -41,15 +41,15 @@
     
 
 
-    <preference name="phonegap-version"       value="3.5.0" />
+    <preference name="phonegap-version"       value="6.3.0" />
     
 
     <!-- Plugins -->  
     <!-- Core plugins -->
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <gap:plugin name="org.apache.cordova.media" />
-    <gap:plugin name="org.apache.cordova.network-information" />
+    <plugin name="cordova-plugin-whitelist" source="npm" />
+    <plugin name="org.apache.cordova.inappbrowser" source="npm" />
+    <plugin name="org.apache.cordova.media" source="npm" />
+    <plugin name="org.apache.cordova.network-information" source="npm" />
     
 
 
