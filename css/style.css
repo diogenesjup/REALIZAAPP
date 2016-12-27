@@ -17,6 +17,7 @@ body{
 	overflow-x: hidden;
     background:#fff;
     font-family: 'Open Sans', sans-serif;
+    padding-top: 50px;
 }
 
 
@@ -77,4 +78,9 @@ body{
 
 .btn-dafault{
     width:100%;
+}
+
+
+.modal-dialog {
+    margin-top: 50px !important;
 }
