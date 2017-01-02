@@ -49,7 +49,11 @@
     <plugin name="org.apache.cordova.inappbrowser" source="npm" />
     <plugin name="org.apache.cordova.media" source="npm" />
     <plugin name="org.apache.cordova.network-information" source="npm" />
-    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+    
+
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
     
 
 
