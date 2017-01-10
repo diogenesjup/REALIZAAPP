@@ -133,12 +133,25 @@ function OpenPdf(){
     //console.log("Abrindo a carta: "+urlCarta);
     //document.getElementById("pdf").src = urlCarta;
     //$("#nomeCarta").html("Carta: "+codigoCarta)
-    window.open(urlCarta, '_system','location=yes');
+    window.open(urlCarta, '_system','location=no,closebuttoncaption=Fechar,toolbar=yes,enableViewportScale=yes');
 
 }
 
 function testePdf(){
+
     var codigoCarta = localStorage.getItem("codigoCarta");
-    var urlCarta = "http://realizagrupo.com.br/app/url.php?codigo="+codigoCarta;
-    cordova.InAppBrowser.open(urlCarta, '_blank', 'location=yes');
+    var urlCarta = "http://realizagrupo.com.br/admin/pdfs/"+codigoCarta+".pdf";
+
+    var fileTransfer = new FileTransfer();
+        fileTransfer.download(
+        urlCarta,
+        "file://sdcard/"+urlCarta,
+        function(entry) {
+            alert("download complete: " + entry.fullPath);
+        },
+        function(error) {
+            alert("download error source " + error.source);
+            alert("download error target " + error.target);
+            alert("upload error code" + error.code);
+        });
 }
