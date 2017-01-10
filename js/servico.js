@@ -121,7 +121,18 @@ function loadPdf(){
     var urlCarta = "http://realizagrupo.com.br/app/url.php?codigo="+codigoCarta;
     console.log("Abrindo a carta: "+urlCarta);
     //document.getElementById("pdf").src = urlCarta;
+    $("#nomeCarta").html("Carta: "+codigoCarta)
+    //window.open(urlCarta, '_system');
 
+}
+
+function OpenPdf(){
+
+    var codigoCarta = localStorage.getItem("codigoCarta");
+    var urlCarta = "http://realizagrupo.com.br/app/url.php?codigo="+codigoCarta;
+    //console.log("Abrindo a carta: "+urlCarta);
+    //document.getElementById("pdf").src = urlCarta;
+    //$("#nomeCarta").html("Carta: "+codigoCarta)
     window.open(urlCarta, '_system');
 
 }
