@@ -78,7 +78,7 @@ function loadCartas(){
 
     });
     request.fail(function () {
-        console.log("Ocorreu um erro ao tentar obter o as cartas na plataforma");
+        console.log("Ocorreu um erro ao tentar obter as cartas na plataforma");
     });
 
 }
