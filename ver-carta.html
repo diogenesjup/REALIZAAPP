@@ -24,6 +24,16 @@
 <!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
 
+<style type="text/css">
+  h3{
+    font-weight: 400;
+  }
+  h3,b{
+    font-family: 'Open Sans', sans-serif;
+    color:#2a7090;
+  }
+</style>
+
 </head>
 <body>
     
@@ -42,9 +52,11 @@
     
     <!--<iframe src="" id="pdf" type="application/pdf"></iframe>-->
     <h3 id="nomeCarta"></h3>
-    <a onclick="testePdf()">teste aqui</a>
+    <div id="dadosPosto"></div>
+
     <p>&nbsp;</p>
-    <canvas id="the-canvas" style="border:1px  solid black"></canvas>
+    <canvas id="the-canvas" style="border:1px solid #ebebeb"></canvas>
+    <p>&nbsp;</p>
       
     </div>
   </div>
@@ -69,7 +81,7 @@
       <a href="dashboard.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i><br><span>Início</span></a>
     </div>
     <div class="col-xs-3 coluna-barra">
-      <a href="#" onclick="OpenPdf();"><i class="fa fa-floppy-o fa-2x" aria-hidden="true"></i><br><span>Salvar</span></a>
+      <a href="#" onclick="OpenPdf();"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i><br><span>Zoom</span></a>
     </div>
 
     <div class="col-xs-3 coluna-barra">
@@ -84,66 +96,6 @@
 <!-- BARRA DE NAVEGAÇÃO MOBILE -->
 
 
-
-<!-- Modal Cartas -->
-<div class="modal fade" id="modalCartas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Suas Cartas</h4>
-      </div>
-      <div class="modal-body" id="areaCartas">
-        carregando...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">fechar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal Postos de trabalho -->
-<div class="modal fade" id="modalPostos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Meus Postos de Trabalho</h4>
-      </div>
-      <div class="modal-body" id="areaPostos">
-        carregando...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">fechar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal Mensagens -->
-<div class="modal fade" id="modalMsg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Minhas mensagens</h4>
-      </div>
-      <div class="modal-body">
-        
-        <p style="text-align: center;">
-         <i>Nenhuma mensagem ainda :)</i>
-        </p> 
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 

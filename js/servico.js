@@ -121,8 +121,24 @@ function loadPdf(){
     var urlCarta = "http://realizagrupo.com.br/app/url.php?codigo="+codigoCarta;
     console.log("Abrindo a carta: "+urlCarta);
     //document.getElementById("pdf").src = urlCarta;
-    $("#nomeCarta").html("Carta: "+codigoCarta)
-    //window.open(urlCarta, '_system');
+    $("#nomeCarta").html("Carta: "+codigoCarta);
+
+    // Dados do posto de trabalho
+    var request = $.ajax({
+        method: "GET",
+        url: "http://realizagrupo.com.br/app/get-dadosPosto.php?codigo="+codigoCarta
+        //data: { email: login, senha: senha }
+    })
+    request.done(function (msg) {
+
+       $("#dadosPosto").html(msg);
+
+    });
+    request.fail(function () {
+        console.log("Ocorreu um erro ao tentar obter o os postos na plataforma");
+    });
+
+
 
 }
 
@@ -137,21 +153,3 @@ function OpenPdf(){
 
 }
 
-function testePdf(){
-
-    var codigoCarta = localStorage.getItem("codigoCarta");
-    var urlCarta = "http://realizagrupo.com.br/admin/pdfs/"+codigoCarta+".pdf";
-
-    var fileTransfer = new FileTransfer();
-        fileTransfer.download(
-        urlCarta,
-        "file://sdcard/"+urlCarta,
-        function(entry) {
-            alert("download complete: " + entry.fullPath);
-        },
-        function(error) {
-            alert("download error source " + error.source);
-            alert("download error target " + error.target);
-            alert("upload error code" + error.code);
-        });
-}
