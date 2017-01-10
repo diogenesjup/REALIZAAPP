@@ -40,7 +40,8 @@
 
     <p>&nbsp;</p>
     
-    <iframe src="" id="pdf" type="application/pdf"></iframe>
+    <!--<iframe src="" id="pdf" type="application/pdf"></iframe>-->
+    <canvas id="the-canvas" style="border:1px  solid black"></canvas>
       
     </div>
   </div>
@@ -143,10 +144,62 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/servico.js"></script>
+    <script type="text/javascript" src="js/pdf.js"></script>
+    <script type="text/javascript" src="js/viewer.js"></script>
     <script type="text/javascript">
+
       $("#nomeUsuario").html("<i>carregando nome</i>");
       loadPdf();
       loadDashboard();
+
+    var codigoCarta = localStorage.getItem("codigoCarta");
+    var urlCarta = "http://realizagrupo.com.br/admin/pdfs/"+codigoCarta+".pdf";
+    console.log("Abrindo a carta: "+urlCarta);
+   //document.getElementById("pdf").src = urlCarta;
+
+  
+ 
+  var url = urlCarta;
+  //
+  // Disable workers to avoid yet another cross-origin issue (workers need
+  // the URL of the script to be loaded, and dynamically loading a cross-origin
+  // script does not work).
+  //
+  PDFJS.disableWorker = true;
+  //
+  // The workerSrc property shall be specified.
+  //
+  PDFJS.workerSrc = 'js/pdf.worker.js';
+  //
+  // Asynchronous download PDF
+  //
+  PDFJS.getDocument(url).then(function getPdfHelloWorld(pdf) {
+    //
+    // Fetch the first page
+    //
+    pdf.getPage(1).then(function getPageHelloWorld(page) {
+      var scale = 1.5;
+      var viewport = page.getViewport(scale);
+      //
+      // Prepare canvas using PDF page dimensions
+      //
+      var canvas = document.getElementById('the-canvas');
+      var context = canvas.getContext('2d');
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+      //
+      // Render PDF page into canvas context
+      //
+      var renderContext = {
+        canvasContext: context,
+        viewport: viewport
+      };
+      page.render(renderContext);
+    });
+  });
+</script>
+</body>
+</html>
 
     </script>
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

@@ -86,12 +86,13 @@ body{
 }
 
 
-#pdf{
+#pdf,#the-canvas{
     width: 100%;
     position: relative;
     top:0;
     left: 0;
-    height: 400px;
+    height: 460px;
     margin-bottom: 0px;
     border:0px;
+    border:1px solid #ebebeb;
 }
