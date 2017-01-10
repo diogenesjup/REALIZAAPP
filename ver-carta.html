@@ -66,7 +66,7 @@
       <a href="dashboard.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i><br><span>Início</span></a>
     </div>
     <div class="col-xs-3 coluna-barra">
-      <a data-toggle="modal" data-target="#modalCartas"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i><br><span>Cartas</span></a>
+      <a onclick="downloadFile();"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i><br><span>Salvar carta</span></a>
     </div>
     
     <div class="col-xs-3 coluna-barra">
@@ -197,6 +197,28 @@
       page.render(renderContext);
     });
   });
+
+
+function downloadFile(){
+
+    // This worked for me
+    var ft = new FileTransfer();
+    ft.download(
+      "http://i.stack.imgur.com/CeHws.png", // what u download
+      //"/sdcard/test.zip", // this is the filename as well complete url
+      // fileSystem.root.toURL() + "test.zip",  use ios and others
+      function(entry) {
+        alert("success");
+        alert(JSON.stringify(entry));
+
+      },
+      function(err) {
+        alert(err);
+        alert(JSON.stringify(err));
+      }
+    );
+
+}
 </script>
 </body>
 </html>
