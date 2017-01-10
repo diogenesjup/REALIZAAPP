@@ -84,3 +84,14 @@ body{
 .modal-dialog {
     margin-top: 50px !important;
 }
+
+
+#pdf{
+    width: 100%;
+    position: relative;
+    top:0;
+    left: 0;
+    height: 400px;
+    margin-bottom: 0px;
+    border:0px;
+}

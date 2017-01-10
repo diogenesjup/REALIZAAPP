@@ -104,3 +104,20 @@ function loadPostos(){
     });
 
 }
+
+
+function verCarta(codigoCarta){
+
+    localStorage.setItem("codigoCarta", codigoCarta);
+    location.href = "ver-carta.html";
+
+}
+
+function loadPdf(){
+
+    var codigoCarta = localStorage.getItem("codigoCarta");
+    var urlCarta = "http://realizagrupo.com.br/admin/pdfs/"+codigoCarta+".pdf";
+    console.log("Abrindo a carta: "+urlCarta);
+    document.getElementById("pdf").src = urlCarta;
+
+}

@@ -33,16 +33,6 @@
 			<img src="images/empresa-logo.png" alt="Realiza app">
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-xs-12 work">
-    
-    <p>&nbsp;</p>
-
-    <h3>Bem vindo, <span id="nomeUsuario"></span></h3>
-    <p></p>
-			
-		</div>
-	</div>
 
 
   <div class="row">
@@ -50,17 +40,7 @@
 
     <p>&nbsp;</p>
     
-    <p>
-      <button class="btn btn-dafault" data-toggle="modal" data-target="#modalCartas" onclick="loadCartas()">Minhas cartas</button>
-    </p>
-
-    <p>
-      <button class="btn btn-dafault" data-toggle="modal" data-target="#modalPostos" onclick="loadPostos()">Meus postos de trabalho</button>
-    </p>
-
-    <p>
-      <button class="btn btn-dafault" data-toggle="modal" data-target="#modalMsg">Mensagens</button>
-    </p>
+    <iframe src="" id="pdf" type="application/pdf"></iframe>
       
     </div>
   </div>
@@ -165,7 +145,9 @@
     <script type="text/javascript" src="js/servico.js"></script>
     <script type="text/javascript">
       $("#nomeUsuario").html("<i>carregando nome</i>");
+      loadPdf();
       loadDashboard();
+
     </script>
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </body>
