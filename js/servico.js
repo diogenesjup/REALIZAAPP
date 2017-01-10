@@ -56,6 +56,8 @@ function loadDashboard(){
     });
     request.fail(function () {
         console.log("Ocorreu um erro ao tentar obter o nome do colaborador plataforma");
+        alert("Ocorreu um erro com a comunicação do servidor Realiza. Por favor, faça seu login novamente.");
+        location.href="index.html";
     });
 
 }
@@ -119,5 +121,7 @@ function loadPdf(){
     var urlCarta = "http://realizagrupo.com.br/admin/pdfs/"+codigoCarta+".pdf";
     console.log("Abrindo a carta: "+urlCarta);
     //document.getElementById("pdf").src = urlCarta;
+
+    window.open(urlCarta, '_system');
 
 }
