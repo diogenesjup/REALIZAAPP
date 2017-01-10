@@ -118,7 +118,7 @@ function verCarta(codigoCarta){
 function loadPdf(){
 
     var codigoCarta = localStorage.getItem("codigoCarta");
-    var urlCarta = "http://realizagrupo.com.br/admin/pdfs/"+codigoCarta+".pdf";
+    var urlCarta = "http://realizagrupo.com.br/app/url.php?codigo="+codigoCarta;
     console.log("Abrindo a carta: "+urlCarta);
     //document.getElementById("pdf").src = urlCarta;
 
