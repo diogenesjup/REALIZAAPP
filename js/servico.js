@@ -129,10 +129,16 @@ function loadPdf(){
 function OpenPdf(){
 
     var codigoCarta = localStorage.getItem("codigoCarta");
-    var urlCarta = "http://realizagrupo.com.br/app/url.php?codigo="+codigoCarta;
+    var urlCarta = "https://docs.google.com/viewer?url=http://realizagrupo.com.br/admin/pdfs/"+codigoCarta+".pdf";
     //console.log("Abrindo a carta: "+urlCarta);
     //document.getElementById("pdf").src = urlCarta;
     //$("#nomeCarta").html("Carta: "+codigoCarta)
-    window.open(urlCarta, '_system');
+    window.open(urlCarta, '_system','location=yes');
 
+}
+
+function testePdf(){
+    var codigoCarta = localStorage.getItem("codigoCarta");
+    var urlCarta = "http://realizagrupo.com.br/app/url.php?codigo="+codigoCarta;
+    cordova.InAppBrowser.open(urlCarta, '_blank', 'location=yes');
 }
