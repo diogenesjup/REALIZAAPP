@@ -153,3 +153,45 @@ function OpenPdf(){
 
 }
 
+
+function loadMensagens(){
+
+    var idUser = localStorage.getItem("ClienteId");
+
+    // Dados das mensagens
+    var request = $.ajax({
+        method: "GET",
+        url: "http://realizagrupo.com.br/app/get-mensagens.php?codigo="+idUser
+        //data: { email: login, senha: senha }
+    })
+    request.done(function (msg) {
+
+       $("#minhaMensagens").html(msg);
+
+    });
+    request.fail(function () {
+        console.log("Ocorreu um erro ao tentar obter o os postos na plataforma");
+    });
+
+    
+}
+
+function loadMensagem(idMsg) {
+    
+     // CARREGAR MENSAGEM SOLICITADA PELO USUÁRIO
+
+        var request = $.ajax({
+            method: "GET",
+            url: "http://realizagrupo.com.br/app/get-mensagem.php?codigo="+idMsg
+            //data: { email: login, senha: senha }
+        })
+        request.done(function (msg) {
+
+           $("#minhaMensagens").html(msg);
+
+        });
+        request.fail(function () {
+            console.log("Ocorreu um erro ao tentar obter o os postos na plataforma");
+        });
+
+}
