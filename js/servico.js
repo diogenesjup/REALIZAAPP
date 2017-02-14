@@ -195,3 +195,29 @@ function loadMensagem(idMsg) {
         });
 
 }
+
+
+function loadMsgNaoLidas() {
+
+    var idUser = localStorage.getItem("ClienteId");
+
+    // Dados das mensagens
+    var request = $.ajax({
+        method: "GET",
+        url: "http://realizagrupo.com.br/app/get-mensagens-nl.php?codigo="+idUser
+        //data: { email: login, senha: senha }
+    })
+    request.done(function (msg) {
+
+       $("#numMensagens").html(msg);
+
+    });
+    request.fail(function () {
+        console.log("Ocorreu um erro ao tentar obter o os postos na plataforma");
+    });
+
+
+
+
+
+}

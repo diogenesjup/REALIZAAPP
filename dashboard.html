@@ -59,7 +59,7 @@
     </p>
 
     <p>
-      <button class="btn btn-dafault" data-toggle="modal" data-target="#modalMsg" onclick="loadMensagens()">Mensagens</button>
+      <button class="btn btn-dafault" data-toggle="modal" data-target="#modalMsg" onclick="loadMensagens()">Mensagens <span id="numMensagens"></span></button>
     </p>
       
     </div>
@@ -166,6 +166,7 @@
     <script type="text/javascript">
       $("#nomeUsuario").html("<i>carregando nome</i>");
       loadDashboard();
+      loadMsgNaoLidas();
     </script>
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </body>
